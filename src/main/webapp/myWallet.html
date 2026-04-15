@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<div id="walletView" hidden=true>
+    <h3 style="color:red">My Wallet</h3>
+    <p>Balance: <span id="balance" style="color:green"></span></p>
+     <p>Credits Earned: <span id="credits" style="color:green"></span></p>
+     <p id="message" style="color:green"></p>
+     
+     <button onclick="renderID(addMoney)">Add money</button>
+     
+     
+</div>
+<br/>
+  <div id="container">
+    </div>
+
+<div id="activateView" >
+    <h3 style="color:red">No Wallet Found</h3>
+    <button onclick="RenderPassword()">Activate Wallet</button>
+</div>
+
+<div id="walletActivation">
+<br>
+<form onsubmit="handleActivate(event)">
+<Label for="wPassInput">SET 4 DIGIT PASSWORD FOR WALLET</Label><br><br>
+<input type="password" id="walletPassword" name="wPassInput">
+<p style="color:red" id="Error"></p>
+<button type="submit">Done</button>
+</form>
+</div>
+
+
+<form>
+
+<div id="addMoney" hidden=true>
+
+<p>ADD-MONEY</p>
+
+<label>Select Payment: </label>
+<select id="payment" onchange="renderPayment(this.value)">
+<option id="" value="">select</option>
+<option id="upi" value="upimoney">UPI</option>
+<option id="net" value="netmoney">NET-BANKING</option>
+<option id="card" value="cardmoney">CARD</option>
+</select>
+
+
+<div id=upiInput hidden=true >
+<br>
+Enter UPI-ID: <input type="text" id="upibox" required> 
+<br>
+<br>
+Enter-Amount: <input type="number" id="amountbox1" required></input>
+
+
+</div>
+
+
+<div id=netInput hidden=true>
+<br>
+Enter Account-Number <input type="text" id="accnobox" required>
+<br>
+<br>
+Enter IFSC-Code <input type="text" id="ifscbox" required>
+<br>
+<br>
+Enter-Amount: <input type="number" id="amountbox2" required></input>
+
+</div>
+
+
+<div id=cardInput hidden=true>
+
+<br>
+Enter-Card Number <input type="text" id="carnobox" required>
+<br>
+<br>
+Enter-CVV <input type="text" id="cvvbox" required>
+<br>
+<br>
+Enter-Amount: <input type="number" id="amountbox3" required></input>
+
+</div>
+
+
+<br/>
+<button type=submit onclick="handleAddMoney(event)">Add</button>
+
+
+</div>
+
+</form>
+
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/utility/walletOperations.js" >
+</script>
+
+
+
+</body>
+</html>

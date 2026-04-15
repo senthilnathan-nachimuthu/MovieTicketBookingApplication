@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MTB</title>
+</head>
+<body>
+	<h3>MTB-Booking</h3>
+
+	<div id="optionContainer" hidden=true>
+		<label>Book By</label> <select id="bookingOption"
+			onchange="loadBookingOptionData(this.value)">
+			<option value="select">Select</option>
+			<option value="theatre">By Theatre</option>
+			<option value="movie">BY Movie</option>
+		</select> <br>
+		<p id="bookingError" style="color: red"></p>
+	</div>
+	<br>
+	<br>
+	<div class="popup-overlay-language" id="language-popup"
+		style="display: none">
+		<div class="popup-box-language">
+			<h3>Choose Language</h3>
+			<p id="languageError" style="color: red"></p>
+			<p id="movieTitle" style="color: green"></p>
+			<input hidden=true id="movieId"> <br> <label>Select
+				Language:</label> <select id="languageDropdown"></select> <br> <br>
+
+			<button onclick="closeMoviePopup()">Cancel</button>
+			<button onclick="handleBookingMovieClick()">Next</button>
+		</div>
+
+	</div>
+
+	<div id="bookingContainer"></div>
+
+	<div id="walletContainer" hidden=true>
+		<h3 style="color: red">Wallet</h3>
+		<p>
+			Available Balance: <span id="balance" style="color: green"></span>
+		</p>
+		<p id="message" style="color: green"></p>
+		<p>
+			Tickets:<span id="ticketSeats" style="color: blue"></span>
+		</p>
+		<h3>
+			Amount: <span id="ticketAmount" style="color: blue"></span>
+		</h3>
+
+		<p id="walletErrorMessage" style="color: red"></p>
+		<button id="walletPaymentBtn" onclick="popPasswordHelper()">Pay
+			Now</button>
+	</div>
+
+
+	<div class="popup-overlay-password" id="password-popup"
+		style="display: none">
+		<div class="popup-box-password">
+			<form>
+				<Label for="wPassInput">ENTER 4 DIGIT PASSWORD</Label><br> <br>
+				<input type="password" id="walletPassword" name="wPassInput">
+				<p id="passwordError" style="color: red"></p>
+			</form>
+			<button onclick="closePasswordPopup()">Cancel</button>
+			<button onclick="verifyPassword()">Confirm</button>
+		</div>
+
+	</div>
+
+
+	<div id="ticketContainer" hidden=true>
+		<h2 style="color: red">Booking-Confirmed</h2>
+		<p style="color: green" id="ticketSuccessMessage"></p>
+		<p>
+			Date/Time: <span id="dateTime" style="color: blue"></span>
+		</p>
+		<p>
+			Movie: <span id="ticketMovie" style="color: blue"></span>
+		</p>
+		<p>
+			Theatre: <span id="ticketTheatre" style="color: blue"></span>
+		</p>
+		<p>
+			Screen:<span id="ticketScreen" style="color: blue"></span>
+		</p>
+		<p>
+			Tickets:<span id="ConfirmedTicketSeats" style="color: blue"></span>
+		</p>
+		<h3>
+			Total Amount: <span id="ConfirmedTicketAmount" style="color: blue"></span>
+		</h3>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MTB</title>
+
+<link rel="stylesheet" href="commonCss.css">
+</head>
+<body>
+	<p id="Error" style="color: red"></p>
+
+	<div id="screenDetails">
+
+		<h2>Screen-Details</h2>
+
+		<form>
+			Enter Screen-name <input id="screenName" type="text" required>
+			<br>
+			<br> Enter Screen-Type <input id="screenType" type="text"
+				required> <br> <br>
+			<button id="nextToSeatType" type="button"
+				onclick="handleScreenDetails('screenDetails','seatType-Container')">Next</button>
+			<br>
+		</form>
+	</div>
+
+	<div id="seatType-Container" hidden=true>
+
+		<h2>SEAT-TYPE</h2>
+		<p style="color: blue">*You can create initial screen seat-layout
+			by entering Seat-Type and its Price along with number of rows &
+			columns of this Seat Type.</p>
+		Add Seat-Type <input id="seatType"> <br> <br>
+		Default Seat-Price: <input type="number" id="seatTypePrice"> <br>
+		<br> Number of Seat Rows: <input type="number" id="seatTypeRow">
+		<br> <br> Number of Seat Columns: <input type="number"
+			id="seatTypeCol"> <br>
+		<br>
+		<button onclick="addSeatType()">ADD</button>
+		<br>
+		<p style="color: blue">*Row is Created by the order of Added Seat Type.</p>
+		<div id="seatTypeContainer"></div>
+		<br> <br>
+		<button id="assignButton" onclick="handleAssignScreen()">Next</button>
+		<br>
+	</div>
+
+
+	<div id="ScreenContainer" hidden=true>
+		<button
+			onclick="handlebackOperation('seatType-Container','ScreenContainer')">back</button>
+
+		<h2>Edit-Screen-Layout</h2>
+			<p style="color: blue">*You can Customize the Screen Layout here. Click on seats to Edit Properties</p>
+		<button onclick="handleAddRow()">ADD ROW</button>
+		<div id="layout-container"></div>
+		
+		<div id="mymodal" class="modal">
+			<div class="modal-content">
+				<button id="close" class="close">Close</button>
+
+
+				<h2>Seat Properties</h2>
+				<form>
+					<p>
+						SeatNum: <span style="color: green" id="seatNum"></span>
+					</p>
+					<label>Assign Seat Type</label> <select id="assignType">
+						<option id="rowAssign" value="byrow">By Row</option>
+						<!--  <option id="colAssign" value="bycol">By Column</option>-->
+						<option id="seatAssign" value=byseat>By Seat</option>
+					</select> <br> <label>Choose Seat Type</label> <select
+						id="chooseSeatType">
+					</select> <br> <label>Disable Seat</label> <input type=checkbox
+						id="disableSeat"></input> <br>
+					<button type="button" id="propertySaveButton"
+						onclick="handleSeatPropertySave()">Save</button>
+
+				</form>
+
+			</div>
+		</div>
+		
+		<button id="saveButton" onclick="handleLayoutSave()">Next</button>
+	</div>
+	<br>
+
+	<div id="PropertyContainer" hidden=true;>
+		<button
+			onclick="handlebackOperation('ScreenContainer','PropertyContainer')">back</button>
+		<h2>Final Layout</h2>
+		<p>TotalCapacity:<span id="seatCapacity" style="color:red"></span>
+		</p>
+		<div id="saved-layout-container"></div>
+
+
+		<br> <br>
+		
+		<button type="button" id="propertyNextButton"
+			onclick="handleScreenDetailsPage()">Confirm</button>
+	</div>
+
+	<div id="additionalDetails" hidden=true>
+		<br>
+		<button
+			onclick="handlebackOperation('PropertyContainer','additionalDetails')">back</button>
+
+		<h2>Show-Times</h2>
+					<p style="color: blue">*Atleast one Default Show Times must be added for this Screen .</p>
+		
+		<form>
+			<label>Add Show Times</label> <input type="time" id="showTime">
+			<button type="button" onclick="addShowTime()">Add</button>
+			<div id="showTimeContainer"></div>
+			<button type="submit" id="finishButton"
+				onclick="handleFinishButton(event)">Finish</button>
+			<button type="submit" id="updateButton"
+				onclick="handleScreenUpdate(event)" hidden=true>Update</button>
+		</form>
+	</div>
+	<script type="text/javascript"
+		src="<%=request.getContextPath()%>/js/utility/screenUtility.js"></script>
+</body>
+</html>

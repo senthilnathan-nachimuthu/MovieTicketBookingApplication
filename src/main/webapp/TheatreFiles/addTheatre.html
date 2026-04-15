@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MTB</title>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/utility/theatreUtility.js"></script>
+<script type="text/javascript" src="<%= request.getContextPath() %>/js/core/api.js"></script>
+
+</head>
+<body>
+<h4>THEATRE-DETAILS</h4>
+<form>
+<p id="theatreId" style="color:red"></p>
+Theatre Name: <input id="theatreName" required type="text" value=""><br><br>
+Theatre Location: <input id="theatreLocation" required type="text" value=""><br><br>
+Enter Credit Points Earned through this Theatre: <input id="theatreCreditPoint" type=number required value="">
+<br><br>
+<p style="color:red" id="theatre-error"></p>
+<button type="submit" onclick= "handleAddTheatre(event)" id="addButton">ADD</button>
+<button type="button" hidden=true id="updateButton" onclick="handleUpdateTheatre(event)">UPDATE</button>
+</form>
+</body>
+</html>

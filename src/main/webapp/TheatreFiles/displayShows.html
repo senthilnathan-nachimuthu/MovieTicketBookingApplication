@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MTB</title>
+</head>
+<body>
+<h3 id="showTitle"></h3>
+<p>Total Shows: <span id="totalShows" style="color:red"></span></p>
+<label>Select All</label>
+<input type="checkbox" id="selectAllChkBox" onchange="toggleAllShows(this)">
+<button onclick="handleShowDeletion()">Delete</button>
+	<ul id="showList"></ul>
+	<p id="displayError" style="color: red"></p>
+
+		<div id="pricingPopup" class="popup-overlay" style="display: none;">
+			<div class="popup-box">
+				<h3 id="popupTitle"></h3>
+				<p id="popupError" style="color:red"></p>
+
+				<div id="pricingContainer"></div>
+
+				<button onclick="savePricing()">Save</button>
+				<button onclick="closePricingPopup()">Cancel</button>
+			</div>
+		</div>
+		<div id="moviePopup" class="popup-overlay-movie" style="display:none;">
+    <div class="popup-box-movie">
+        <h3>Change Movie Details</h3>
+	<p id="movieChangeError" style="color:red"></p>
+        <input type="hidden" id="popupShowId">
+   <input type="hidden" id="currentMovie">   <input type="hidden" id="currentLanguage">
+        <label>Select Movie:</label>
+        <select id="movieDropdown" onchange="handleMovieSelection()"></select>
+
+        <br><br>
+
+        <label>Select Language:</label>
+        <select id="languageDropdown"></select>
+
+        <br><br>
+
+        <button onclick="submitMovieChange()">Update</button>
+        <button onclick="closeMoviePopup()">Cancel</button>
+    </div>
+</div>
+</body>
+</html>
