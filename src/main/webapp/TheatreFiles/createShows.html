@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MTB</title>
+</head>
+<body>
+	<h3>Create Shows</h3>
+	<p id="Error" style="color: red"></p>
+
+
+	<div id="theatreListDiv">
+
+		<h3 style="color: green">
+			<span>Movie:</span> <span id="movieTitle" style="color: red">
+			</span> <span>Language:</span> <select id="languageSelect"></select>
+		</h3>
+		<p style="color: blue">*Choose Theatres to Create Shows</p>
+		<label>Select All</label><input type="checkbox"
+			onclick="handleToggleAllTheatres(this)" id="selectAllBox">
+		<ul id="showTheatreList"></ul>
+
+		<p id="showError" style="color: red"></p>
+		<button onClick="CollectAllChoosenTheatres()">Next</button>
+	</div>
+	<div id="dateSelection" hidden=true>
+		<h3>Show Date</h3>
+		<label>From Date: </label><input type="date" id="fromDate"> <label>To
+			Date: </label><input type="date" id="toDate"> <br> <br>
+		<button type="button" onclick="handleShowCreation()">Create-Show</button>
+	</div>
+
+</body>
+</html>

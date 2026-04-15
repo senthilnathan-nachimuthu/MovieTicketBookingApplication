@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MTB</title>
+</head>
+<body>
+
+	<div id="myBookingContainer">
+		<h3 id="" style="color: red">My Bookings</h3>
+		<ul id="myBookingList"></ul>
+		<p id="myBookingError" style="color: red"></p>
+	</div>
+	<div class="popup-overlay-myBooking" id="booking-display-popup"
+		style="display: none">
+		<div class="popup-box-myBooking">
+			<div id="ticketContainer" hidden=true>
+				<h2 style="color: red">Booking-<span id="ticketStatus"></span></h2>
+				<p style="color: green" id="ticketSuccessMessage"></p>
+				<p>
+					Date/Time: <span id="dateTime" style="color: blue"></span>
+				</p>
+				<p>
+					Movie: <span id="ticketMovie" style="color: blue"></span>
+				</p>
+				<p>
+					Theatre: <span id="ticketTheatre" style="color: blue"></span>
+				</p>
+				<p>
+					Screen:<span id="ticketScreen" style="color: blue"></span>
+				</p>
+				<p>
+					Tickets:<span id="ConfirmedTicketSeats" style="color: blue"></span>
+				</p>
+				<h3>
+					Total Amount: <span id="ConfirmedTicketAmount" style="color: blue"></span>
+				</h3>
+			</div>
+
+			<button onclick="closeTicketDisplayPopup()">Close</button>
+		</div>
+
+	</div>
+
+</body>
+</html>

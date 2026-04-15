@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MTB</title>
+</head>
+<body>
+
+<div id="activateView" >
+    <h3 style="color:red">No Wallet Found</h3>
+    <button onclick="RenderPassword()">Activate Wallet</button>
+</div>
+
+<div id="walletActivation" hidden=true>
+<br>
+<form onsubmit="handleActivate(event)">
+<Label for="wPassInput">SET 4 DIGIT PASSWORD FOR WALLET</Label><br><br>
+<input type="password" id="walletPassword" name="wPassInput">
+<p style="color:red" id="Error"></p>
+<button type="submit">Done</button>
+</form>
+</div>
+
+</body>
+</html>

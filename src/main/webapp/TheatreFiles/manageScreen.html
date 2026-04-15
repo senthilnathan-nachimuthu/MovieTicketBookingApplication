@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MTB</title>
+<link rel="stylesheet" href="commonCss.css">
+
+</head>
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/js/utility/theatreUtility.js"></script>
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/js/utility/screenUtility.js"></script>
+
+<script type="text/javascript"
+	src="<%= request.getContextPath() %>/js/core/api.js"></script>
+
+<body>
+	<h1>Manage Screen</h1>
+	<p>
+		<span style="color: red" id="displayTheatreName"></span>--<span
+			style="color: green" id="displayTheatreLocation"></span>
+	</p>
+
+	<button id="addScreenButton" onclick="handleAddNewScreen()">Add
+		Screen</button>
+<div id="screen-manage-container">
+	
+</div>
+
+	<br>
+	<br>
+</body>
+</html>

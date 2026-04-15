@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MTB</title>
+</head>
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/js/utility/theatreUtility.js"></script>
+	<script type="text/javascript"
+	src="<%=request.getContextPath()%>/js/utility/commonUtility.js"></script>
+<script src="<%=request.getContextPath()%>/js/utility/movieUtility.js" type="text/javascript"></script>
+<body>
+
+<h3>Movie-Details</h3>
+<p id="Error" style="color: red"></p>
+<form>
+<label>Movie Name</label>
+<input type="text" id="movieName" required>
+<br>
+<br>
+<label>Movie Duration</label>
+<input type="number" id="movieDuration" placeholder="in Minutes" required>
+
+<br>
+<br>
+<label>Add Movie Languages</label>
+<input type="text" id="movieLanguage" placeholder="">
+<button type="button" onclick="handleAddMovieLanguage()">Add</button>
+<br>
+<div id="movieLanguageContainer"></div>
+<p style="color:blue">Note: 1.Movie Name should not contain any special characters.<br>2.Movie Duration must greater than 0 minutes<br>3. Movie Language should not contian any special characters</p>
+<br>
+<button type="submit"  id="submitMovieDetail"  onclick="handleAddMovieRequest(event)">Submit</button>
+<button type="submit"  id="updateMovieDetail"  onclick="handleUpdateMovieRequest(event)" hidden=true>Update</button>
+
+</form>
+
+</body>
+</html>
